@@ -1,10 +1,10 @@
-module.exports = class Tennis {
+module.exports = class TennisPlayer {
 
-    constructor(value){
-        let player = this.value;
+    constructor(player){
+      this.player = player;
     }
 
-    tennis_player = (player) => {
+    get_tennisPlayer = (player) => {
         if(player === 'playerOne'){
             let p1_score = [];
             return p1_score;
@@ -18,19 +18,5 @@ module.exports = class Tennis {
         else{
             return ('Player not found');
         }
-    }
-
-    addPoints = (player, points) => {
-        this.player = player;
-         this.points = points;
-
-        let currentPlayerScore = this.tennis_player(player);        
-        currentPlayerScore.push(points);
-        
-        console.log(currentPlayerScore);
-
-
-        //call tennis_player method; passes player to modify 
-        //pass points to player indicated 
     }
 }

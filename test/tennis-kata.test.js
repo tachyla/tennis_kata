@@ -15,13 +15,13 @@
 // If at least three points have been scored by each player, and the scores are equal, the score is “deuce”.
 // If at least three points have been scored by each side and a player has one more point than his opponent, the score of the game is “advantage” for the player in the lead.
 
-const Tennis = require('../src/tennis-kata');
+const TennisPlayer = require('../src/tennis-kata');
 
 describe('tennis game', () => {
     describe('tests requesting player score', () => {
         it('returns score for player 1', () => {
-            let testTennisClass = new Tennis();
-            let result = testTennisClass.tennis_player('playerOne');
+            let testTennisClass = new TennisPlayer();
+            let result = testTennisClass.get_tennisPlayer('playerOne');
 
             let expectedResult = [];
 
@@ -29,32 +29,20 @@ describe('tennis game', () => {
         });
         
         it('returns score for player 2', () => {
-            let testTennisClass = new Tennis();
+            let testTennisClass = new TennisPlayer();
 
-            let result = testTennisClass.tennis_player('playerTwo');
+            let result = testTennisClass.get_tennisPlayer('playerTwo');
             let expectedResult = [];
     
             expect(result).toEqual(expectedResult);
         });
 
         it('returns error message when player string is not recognized', () => {
-            let testTennisClass = new Tennis();
+            let testTennisClass = new TennisPlayer ();
 
-            let result = testTennisClass.tennis_player('playerThree');
+            let result = testTennisClass.get_tennisPlayer('playerThree');
 
             expect(result).toEqual('Player not found')
-        });
-
-        it('adds points to players score', () => {
-            let testTennisClass = new Tennis();
-
-            //adds 10 points to player1
-            let adds_points = testTennisClass.addPoints('playerOne', 10);
-
-            //check players score 
-            let result = testTennisClass.tennis_player('playerOne');
-
-            expect(result).not.toHaveLength(0);
         });
     }); 
 });
