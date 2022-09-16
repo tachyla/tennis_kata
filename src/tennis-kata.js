@@ -21,14 +21,16 @@ module.exports = class Tennis {
     }
 
     addPoints = (player, points) => {
-        player = this.player;
-        points = this.points;
+        this.player = player;
+         this.points = points;
 
-        if(player === 'playerOne'){
-            p1_score.push(points);
-        }
-        else if(player === 'playerTwo'){
-            p2_score.push(point);
-        }
+        let currentPlayerScore = this.tennis_player(player);        
+        currentPlayerScore.push(points);
+        
+        console.log(currentPlayerScore);
+
+
+        //call tennis_player method; passes player to modify 
+        //pass points to player indicated 
     }
 }
