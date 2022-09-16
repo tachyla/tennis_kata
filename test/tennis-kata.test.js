@@ -18,11 +18,11 @@
 const tennis_game = require('../src/tennis-kata');
 
 describe('tennis game', () => {
-    it('returns true', () => {
-        let result = tennis_game();
+    // it('returns true', () => {
+    //     let result = tennis_game();
 
-        expect(result).toEqual(true);
-    });
+    //     expect(result).toEqual(true);
+    // });
 
     describe('tests requesting player score', () => {
         it('returns score for player 1', () => {
@@ -38,5 +38,11 @@ describe('tennis game', () => {
     
             expect(result).toEqual(expectedResult);
         });
+
+        it('returns error message when player string is not recognized', () => {
+            let result = tennis_game('playerThree');
+
+            expect(result).toEqual('Player not found')
+        })
     }); 
 });

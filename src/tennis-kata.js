@@ -10,7 +10,7 @@ const tennis_game = (input) => {
     }
 
     else{
-        return true;
+        return ('Player not found');
     }
 }
 
