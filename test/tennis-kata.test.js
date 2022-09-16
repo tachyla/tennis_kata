@@ -43,6 +43,18 @@ describe('tennis game', () => {
             let result = testTennisClass.tennis_player('playerThree');
 
             expect(result).toEqual('Player not found')
-        })
+        });
+
+        it('adds points to players score', () => {
+            let testTennisClass = new Tennis();
+
+            //adds 10 points to player1
+            let adds_points = testTennisClass.addPoints('playerOne', 10);
+
+            //check players score 
+            let result = testTennisClass.tennis_player('playerOne');
+
+            expect(result).not.toHaveLength(0);
+        });
     }); 
 });

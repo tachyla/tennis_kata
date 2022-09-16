@@ -1,4 +1,5 @@
 module.exports = class Tennis {
+
     constructor(value){
         let player = this.value;
     }
@@ -16,6 +17,18 @@ module.exports = class Tennis {
 
         else{
             return ('Player not found');
+        }
+    }
+
+    addPoints = (player, points) => {
+        player = this.player;
+        points = this.points;
+
+        if(player === 'playerOne'){
+            p1_score.push(points);
+        }
+        else if(player === 'playerTwo'){
+            p2_score.push(point);
         }
     }
 }
