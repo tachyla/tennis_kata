@@ -1,17 +1,21 @@
-const tennis_game = (input) => {
-    if(input === 'playerOne'){
-        let p1_score = [];
-        return p1_score;
+module.exports = class Tennis {
+    constructor(value){
+        let player = this.value;
     }
 
-    if(input === 'playerTwo'){
-        let p2_score = [];
-        return p2_score;
-    }
+    tennis_player = (player) => {
+        if(player === 'playerOne'){
+            let p1_score = [];
+            return p1_score;
+        }
 
-    else{
-        return ('Player not found');
+        if(player === 'playerTwo'){
+            let p2_score = [];
+            return p2_score;
+        }
+
+        else{
+            return ('Player not found');
+        }
     }
 }
-
-module.exports = tennis_game;

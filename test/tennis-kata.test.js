@@ -15,32 +15,32 @@
 // If at least three points have been scored by each player, and the scores are equal, the score is “deuce”.
 // If at least three points have been scored by each side and a player has one more point than his opponent, the score of the game is “advantage” for the player in the lead.
 
-const tennis_game = require('../src/tennis-kata');
+const Tennis = require('../src/tennis-kata');
 
 describe('tennis game', () => {
-    // it('returns true', () => {
-    //     let result = tennis_game();
-
-    //     expect(result).toEqual(true);
-    // });
-
     describe('tests requesting player score', () => {
         it('returns score for player 1', () => {
-            let result = tennis_game('playerOne');
+            let testTennisClass = new Tennis();
+            let result = testTennisClass.tennis_player('playerOne');
+
             let expectedResult = [];
 
             expect(result).toEqual(expectedResult);
         });
         
         it('returns score for player 2', () => {
-            let result = tennis_game('playerTwo');
+            let testTennisClass = new Tennis();
+
+            let result = testTennisClass.tennis_player('playerTwo');
             let expectedResult = [];
     
             expect(result).toEqual(expectedResult);
         });
 
         it('returns error message when player string is not recognized', () => {
-            let result = tennis_game('playerThree');
+            let testTennisClass = new Tennis();
+
+            let result = testTennisClass.tennis_player('playerThree');
 
             expect(result).toEqual('Player not found')
         })
